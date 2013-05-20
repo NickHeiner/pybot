@@ -7,7 +7,7 @@ def getJsonForCourthouse():
 """
   Argument: the return value of getJsonForCourthouse()
 
-  Return the time until the next train leaves Westward (towards Clarendon / Vienna)
+  Return the time until the next train leaves Westward (towards Clarendon / Vienna) (in minutes, as a string)
 """
 def timeForNextWestTrain(wmataResponse):
   pass
@@ -15,7 +15,7 @@ def timeForNextWestTrain(wmataResponse):
 """
   Argument: the return value of getJsonForCourthouse()
 
-  Return the time until the next train leaves Eastwarn (towards Rosslyn / New Carrolton)
+  Return the time until the next train leaves Eastwarn (towards Rosslyn / New Carrolton) (in minutes, as a string)
 """
 def timeForNextEastTrain(wmataResponse):
   pass
