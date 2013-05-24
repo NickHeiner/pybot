@@ -2,6 +2,7 @@ import os
 import re
 import metro
 import cnjokes
+import bomb
 from flask import Flask, request, json
 
 app = Flask(__name__)
@@ -22,7 +23,10 @@ def guacamole(message):
   if re.findall('guacamole', message['text'], re.I):
     return ['hey did you know that Guarapo is 7th most famous guacamole bar in the mid-atlantic region?']
 
-handlers = [guacamole, metroHandler, jokesHandler]
+def bombHandler(message):
+  return bomb.handleMessage(message['text'])
+
+handlers = [guacamole, metroHandler, jokesHandler, bombHandler]
 
 @app.route('/')
 def listen():
@@ -38,7 +42,7 @@ def listen():
     if response is not None:
       return json.dumps({'messages': response})
 
-  return ''
+  return json.dumps({'messages': [], 'warning': 'unrecogonized handler'})
 
 """
 `message` will be of the following form:
