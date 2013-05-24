@@ -9,10 +9,14 @@ app = Flask(__name__)
 app.config['DEBUG'] = True
 
 def metroHandler(message):
-  return [metro.handleMessage(message['text'])]
+  response = metro.handleMessage(message['text'])
+  if response:
+    return [response]
 
 def jokesHandler(message):
-  return [cnjokes.handleMessage(message['text'])]
+  response = cnjokes.handleMessage(message['text'])
+  if response:
+    return [response]
 
 def guacamole(message):
   if re.findall('guacamole', message['text'], re.I):
