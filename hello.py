@@ -20,10 +20,7 @@ def jokesHandler(message):
 
 def guacamole(message):
   if re.findall('guacamole', message['text'], re.I):
-    return [
-      'hey did you that Guarapo is 7th most famous guacamole bar in the mid-atlantic region?',
-      "better than Jerry's for sure"
-    ]
+    return ['hey did you know that Guarapo is 7th most famous guacamole bar in the mid-atlantic region?']
 
 handlers = [guacamole, metroHandler, jokesHandler]
 
